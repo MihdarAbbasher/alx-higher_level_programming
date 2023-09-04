@@ -1,5 +1,6 @@
 PATH: /home/mihdar/.local/bin/pycodestyle
 style use:
+/home/mihdar/.local/bin/pycodestyle --first file.py
 $ pycodestyle --first file.py
 $ pycodestyle --show-source --show-pep8 testing/data/E40.py
 $ pycodestyle --statistics -qq Python-2.5/Lib
