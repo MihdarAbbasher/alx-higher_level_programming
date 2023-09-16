@@ -6,14 +6,14 @@ def roman_to_int(roman_string):
         return 0
 
     lenn = len(roman_string)
-    int_value = romans_dic[roman_string[0]]
-    for i in range(lenn - 1):
+    int_value = romans_dic[roman_string[lenn - 1]]
+    for i in range(lenn - 1, 0, -1):
         current_value = romans_dic[roman_string[i]]
-        next_value = romans_dic[roman_string[i + 1]]
+        next_value = romans_dic[roman_string[i - 1]]
 
-        if current_value >= next_value:
+        if current_value <= next_value:
             int_value += next_value
         else:
-            int_value = next_value - int_value
+            int_value -= next_value
 
     return int_value
