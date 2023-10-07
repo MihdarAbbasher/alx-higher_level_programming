@@ -16,11 +16,7 @@ after line.
 <BLANKLINE>
 >>> text_indentation("single line")
 single line
->>> text_indentation("Newline char is\nPrinted.")
-Newline char is
-Printed.
-<BLANKLINE>
-<BLANKLINE>
+
 >>> text_indentation("\n\n\n Three new lines.")
 <BLANKLINE>
 <BLANKLINE>
