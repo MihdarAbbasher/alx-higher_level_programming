@@ -1,0 +1,46 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hi?")
+Hi?
+<BLANKLINE>
+>>> text_indentation("   Hi too.")
+Hi too.
+<BLANKLINE>
+>>> text_indentation("          ")
+>>> text_indentation("Hello.   ")
+Hello.
+<BLANKLINE>
+>>> text_indentation("    yes.    after line.   ")
+yes.
+<BLANKLINE>
+after line.
+<BLANKLINE>
+>>> text_indentation("single line")
+single line
+>>> text_indentation("Newline char is\nPrinted.")
+Newline char is
+<BLANKLINE>
+<BLANKLINE>
+Printed.
+<BLANKLINE>
+>>> text_indentation("\n\n\n Three new lines.")
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Three new lines.
+<BLANKLINE>
+>>> text_indentation("This is \n new line.")
+This is 
+new line.
+<BLANKLINE>
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"key": 5})
+Traceback (most recent call last):
+TypeError: text must be a string
