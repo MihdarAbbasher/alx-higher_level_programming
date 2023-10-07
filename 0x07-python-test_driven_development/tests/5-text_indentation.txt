@@ -18,9 +18,8 @@ after line.
 single line
 >>> text_indentation("Newline char is\nPrinted.")
 Newline char is
-<BLANKLINE>
-<BLANKLINE>
 Printed.
+<BLANKLINE>
 <BLANKLINE>
 >>> text_indentation("\n\n\n Three new lines.")
 <BLANKLINE>
