@@ -32,5 +32,14 @@ class Base:
                 list_dic.append(list_objs[i].to_dictionary())
         lists = cls.to_json_string(list_dic)
         with open(filename, 'w') as f:
-            f.write(lists)        
+            f.write(lists)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Convert JSON string into dictionary """
+        if not json_string:
+            return []
+        return json.loads(json_string)
+
+      
 
