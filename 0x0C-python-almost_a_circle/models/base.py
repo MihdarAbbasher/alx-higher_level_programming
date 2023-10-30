@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Module that contains class Base """
 import json
+import csv
+import os.path
 
 class Base:
     """ Class Base as base class"""
@@ -40,6 +42,30 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create an instance """
+        if cls.__name__ == "Rectangle":
+            new = cls(10, 10)
+        else:
+            new = cls(10)
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances from file"""
+        filename = "{}.json".format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return []
+        with open(filename, 'r') as f:
+            list_str = f.read()
+        list_cls = cls.from_json_string(list_str)
+        list_inst = []
+        for index in range(len(list_cls)):
+            list_inst.append(cls.create(**list_cls[index]))
+        return list_inst
 
       
 
