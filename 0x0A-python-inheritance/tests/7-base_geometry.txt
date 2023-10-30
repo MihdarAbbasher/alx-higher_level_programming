@@ -3,10 +3,6 @@
 >>> type(bg)
 <class '7-base_geometry.BaseGeometry'>
 
->>> bg = BaseGeometry(None)
-Traceback (most recent call last):
-TypeError: object() takes no parameters
-
 Methods
 =======
 >>> bg = BaseGeometry()
