@@ -1,32 +1,32 @@
 #!/usr/bin/python3
-""" Module for test Base class """
+""" Module for test Square class """
 import unittest
-from models.base import Base
+from models.square import Square
 
 
-class TestBaseMethods(unittest.TestCase):
-    """ class to test Base class """
+class TestSquareMethods(unittest.TestCase):
+    """ class to test Square class """
 
     def setUp(self):
         """ Method calles for all tests """
-        Base._Base__nb_objects = 0
+        Square._Base__nb_objects = 0
 
     def test_id(self):
         """ Test assigned id """
-        new = Base(1)
-        self.assertEqual(new.id, 1)
+        new = Square(1)
+        self.assertEqual(new.size, 1)
 
     def test_id_default(self):
         """ Test default id """
-        new = Base()
-        self.assertEqual(new.id, 1)
+        new = Square(1, 2)
+        self.assertEqual(new.x, 2)
 
     def test_id_nb_objects(self):
         """ Test nb object attribute """
-        new = Base()
-        new2 = Base()
-        new3 = Base()
-        self.assertEqual(new.id, 1)
-        self.assertEqual(new2.id, 2)
-        self.assertEqual(new3.id, 3)
+        new = Square(1, 2, 4)
+        self.assertEqual(new.y, 4)
 
+    def test_id(self):
+        """test id of inst."""
+        new = Square(1, 2, 4, 5)
+        self.assertEqual(new.id, 5)

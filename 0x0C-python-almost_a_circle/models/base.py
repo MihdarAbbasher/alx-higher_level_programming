@@ -57,7 +57,7 @@ class Base:
         return new
 
     @classmethod
-    def load_from_file(cls):
+    def load_from_file_csv(cls):
         """ Returns a list of instances from file"""
         filename = "{}.json".format(cls.__name__)
         if os.path.exists(filename) is False:
