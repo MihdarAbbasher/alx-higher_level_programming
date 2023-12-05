@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """ Module that contains class Base """
+
 import json
 import csv
 import os.path
+
 
 class Base:
     """ Class Base as base class"""
@@ -15,6 +17,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ Convert list to JSON string """
@@ -92,4 +95,3 @@ class Base:
         with open(filename, 'w') as writeFile:
             writer = csv.writer(writeFile)
             writer.writerows(matrix)
-
