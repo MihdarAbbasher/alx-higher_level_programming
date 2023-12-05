@@ -59,15 +59,16 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """ Returns a list of instances from file"""
-        filename = "{}.json".format(cls.__name__)
+        filename = "{}.csv".format(cls.__name__)
         if os.path.exists(filename) is False:
             return []
         with open(filename, 'r') as f:
             list_str = f.read()
-        list_cls = cls.from_json_string(list_str)
-        list_inst = []
-        for index in range(len(list_cls)):
-            list_inst.append(cls.create(**list_cls[index]))
+        list_inst = cls.from_json_string(list_str)
+        for x in list_inst:
+            print("-------------------------\nx:")
+            print(x)
+            list_inst.append(x)
         return list_inst
 
     @classmethod
