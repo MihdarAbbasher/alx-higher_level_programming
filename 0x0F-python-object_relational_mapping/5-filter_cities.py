@@ -9,11 +9,15 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
-    query = "SELECT * FROM `cities`\
-            inner join states\
-            on cities.state_id = states.id\
-            WHERE states.name = {} ORDER BY cities.id".format(sys.argv[4])
-    cur.execute(query)
-    [print(x) for x in cur.fetchall()]
+    cur.execute("""SELECT cities.name FROM
+                cities INNER JOIN states ON states.id=cities.state_id
+                WHERE states.name=%s""", (sys.argv[4],))
+    rows = cur.fetchall()
+    li = list(r[0] for r in rows)
+    for i in range(len(li)):
+        print(li[i], sep="")
+        if  i < len(li) - 1:
+            print(", ")
