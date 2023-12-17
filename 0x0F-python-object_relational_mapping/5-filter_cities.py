@@ -17,7 +17,7 @@ if __name__ == "__main__":
                 WHERE states.name=%s""", (sys.argv[4],))
     rows = cur.fetchall()
     li = list(r[0] for r in rows)
-    for i in range(len(li)):
-        print(li[i], sep="")
-        if  i < len(li) - 1:
-            print(", ")
+    print(*li, sep=", ")
+
+    cur.close()
+    db.close()
