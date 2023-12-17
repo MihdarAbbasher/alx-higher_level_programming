@@ -13,4 +13,4 @@ if __name__ == "__main__":
     cur = db.cursor()
     query = "SELECT * FROM `cities` ORDER BY cities.id"
     cur.execute(query)
-    [print(state) for state in quer.fetchall() if state[1][0] == "N"]
+    [print(x) for x in cur.fetchall()]
