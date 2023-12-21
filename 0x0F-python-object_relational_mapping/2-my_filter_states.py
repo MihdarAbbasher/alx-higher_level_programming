@@ -12,6 +12,6 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     quer = db.cursor()
     quer.execute("""SELECT * FROM `states`
-        WHERE name = '{}'
+        WHERE BINARY name = '{}'
         ORDER BY states.id""".format(sys.argv[4]).strip("'"))
     [print(state) for state in quer.fetchall()]
