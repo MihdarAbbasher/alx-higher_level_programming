@@ -1,16 +1,7 @@
 #!/usr/bin/node
-const converter = require('./10-converter').converter;
+const nbOccurences = require('./7-occurrences').nbOccurences;
 
-let myConverter = converter(10);
-
-console.log(myConverter(2));
-console.log(myConverter(12));
-console.log(myConverter(89));
-
-
-myConverter = converter(16);
-
-console.log(myConverter(2));
-console.log(myConverter(12));
-console.log(myConverter(89));
+console.log(nbOccurences([1, 2, 3, 4, 5, 6], 3));
+console.log(nbOccurences([3, 2, 3, 4, 5, 3, 3], 3));
+console.log(nbOccurences(["S", 12, "c", "S", "School", 8], "S"));
 

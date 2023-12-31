@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.nbOccurences = function (list, searchElement) {
   let l = list.length;
   let res = 0;
